@@ -1,11 +1,882 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+
+    <meta name="viewport" <meta charset="utf8" content="width=device-width, initial-scale=1.0">
+
+    <title>Projeto Integrador</title>
+
+    <style>
+        /* ==========================================
+   PROJETO INTEGRADOR - ESTILOS
+   Alunos do 2º Ano Técnico em Informática
+   ========================================== */
+
+        /* ----- RESET E CONFIGURAÇÕES GERAIS ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* ----- CABEÇALHO ----- */
+        header {
+            background: linear-gradient(135deg, #1a3a5c, #2a5a7c);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* ----- MENU DE NAVEGAÇÃO ----- */
+        nav {
+            background: #ffffff;
+            padding: 12px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #e67e22;
+        }
+
+        nav a {
+            color: #1a3a5c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        nav a:hover {
+            background: #1a3a5c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 58, 92, 0.3);
+        }
+
+        /* ----- CONTEÚDO PRINCIPAL ----- */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ----- SEÇÕES ----- */
+        section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eaeef3;
+            scroll-margin-top: 80px;
+        }
+
+
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #1a3a5c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 4px solid #e67e22;
+            display: inline-block;
+        }
+
+        section>p {
+            color: #4a5a6a;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+
+        /* ----- CAIXAS (CARDS) ----- */
+        .caixa {
+            background: #f8fafc;
+            border-left: 5px solid #e67e22;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .caixa:hover {
+            transform: translateX(6px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+        }
+
+        .caixa h3 {
+            color: #1a3a5c;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .caixa p {
+            color: #2a3a4a;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .caixa ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .caixa ul li {
+            padding: 6px 0 6px 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23e67e22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+            background-size: 18px;
+            color: #2a3a4a;
+            border-bottom: 1px solid #eaeef3;
+        }
+
+        .caixa ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ----- SEÇÃO FÍSICA (destaque especial) ----- */
+        #fisica .caixa {
+            border-left-color: #2980b9;
+        }
+
+        #fisica .caixa:hover {
+            border-left-color: #1a5276;
+        }
+
+        /* ----- SEÇÃO GEOGRAFIA (destaque especial) ----- */
+        #geografia .caixa {
+            border-left-color: #27ae60;
+        }
+
+        #geografia .caixa:hover {
+            border-left-color: #1e8449;
+        }
+
+        /* ----- SEÇÃO FILOSOFIA (destaque especial) ----- */
+        #filosofia .caixa {
+            border-left-color: #8e44ad;
+        }
+
+        #filosofia .caixa:hover {
+            border-left-color: #6c3483;
+        }
+
+        /* ----- SEÇÃO SOLUÇÃO (destaque especial) ----- */
+        #solucao .caixa {
+            border-left-color: #e67e22;
+            background: #fef9f0;
+        }
+
+        #solucao .caixa:hover {
+            background: #fff6e5;
+            border-left-color: #d35400;
+        }
+
+        /* ----- IMAGENS (placeholder) ----- */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            margin: 10px 0;
+            display: block;
+        }
+
+        /* ----- TABELAS ----- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        table th {
+            background: #1a3a5c;
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid #eaeef3;
+        }
+
+        table tr:hover td {
+            background: #f0f4f8;
+        }
+
+        /* ----- LISTA DE REFERÊNCIAS ----- */
+        #referencias ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #referencias ul li {
+            padding: 10px 15px;
+            background: #f8fafc;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border-left: 4px solid #1a3a5c;
+            color: #2a3a4a;
+        }
+
+        #referencias ul li:hover {
+            background: #f0f4f8;
+        }
+
+        /* ----- RODAPÉ ----- */
+        footer {
+            max-width: 1100px;
+            margin: 20px auto 0;
+            background: #1a3a5c;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 12px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        footer p:last-child {
+            margin-bottom: 0;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
+
+        /* Tablets e telas médias */
+        @media (max-width: 900px) {
+            main {
+                padding: 25px 25px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Celulares grandes */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            header p {
+                font-size: 0.95rem;
+            }
+
+            nav {
+                padding: 10px 12px;
+                gap: 5px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 6px 14px;
+            }
+
+            main {
+                padding: 20px 18px;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .caixa {
+                padding: 15px 18px;
+            }
+
+            .caixa h3 {
+                font-size: 1.05rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            table th,
+            table td {
+                padding: 8px 10px;
+            }
+
+            footer {
+                padding: 20px 15px;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Celulares pequenos */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            header {
+                padding: 20px 12px;
+                border-radius: 8px 8px 0 0;
+            }
+
+            header h1 {
+                font-size: 1.3rem;
+            }
+
+            header p {
+                font-size: 0.85rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 8px;
+                gap: 4px;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 15px 12px;
+                border-radius: 0;
+            }
+
+            section {
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+            }
+
+            section h2 {
+                font-size: 1.3rem;
+            }
+
+            section>p {
+                font-size: 0.95rem;
+            }
+
+            .caixa {
+                padding: 12px 14px;
+                margin-bottom: 15px;
+            }
+
+            .caixa h3 {
+                font-size: 1rem;
+            }
+
+            .caixa p {
+                font-size: 0.9rem;
+            }
+
+            .caixa ul li {
+                padding: 5px 0 5px 25px;
+                font-size: 0.9rem;
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+
+            table th,
+            table td {
+                padding: 6px 8px;
+            }
+
+            footer {
+                padding: 15px 12px;
+                border-radius: 0 0 8px 8px;
+            }
+        }
+
+        /* ==========================================
+   UTILITÁRIOS (opcionais)
+   ========================================== */
+
+        /* Destaque para avisos */
+        .aviso-demo {
+            background: #fff3e0;
+            border: 2px dashed #e67e22;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            color: #7a4a1a;
+        }
+
+        /* Botão estilizado */
+        .btn {
+            display: inline-block;
+            padding: 10px 28px;
+            background: #1a3a5c;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2a5a7c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(26, 58, 92, 0.3);
+        }
+    </style>
+
+
 </head>
+
 <body>
-    
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+        <h1>Nome do Projeto</h1>
+
+        <p>
+            Projeto Integrador B - 2º Ano Técnico em Informática
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav>
+
+        <a href="#inicio">Início</a>
+
+        <a href="#fisica">Física</a>
+
+        <a href="#geografia">Geografia</a>
+
+        <a href="#filosofia">Filosofia</a>
+
+        <a href="#solucao">Solução</a>
+
+    </nav>
+
+
+    <!-- =========================
+         CONTEÚDO
+    ========================== -->
+
+    <main>
+
+
+        <!-- =====================
+             INÍCIO
+        ====================== -->
+
+        <section id="inicio">
+
+            <h2>Sobre o Projeto</h2>
+
+            <div class="caixa">
+
+                <h3>Tema</h3>
+
+                <p>
+                    Escreva aqui o tema escolhido pelo grupo.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>O Problema</h3>
+
+                <p>
+                    Descreva aqui o problema que o grupo identificou.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Justificativa</h3>
+
+                <p>
+                    Explique por que esse problema é importante e
+                    por que ele foi escolhido pelo grupo.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Objetivos</h3>
+
+                <p>
+                    Explique o que o grupo pretende investigar,
+                    compreender ou solucionar.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Integrantes</h3>
+
+                <ul>
+                    <li>Nome do aluno 1</li>
+                    <li>Nome do aluno 2</li>
+                    <li>Nome do aluno 3</li>
+                    <li>Nome do aluno 4</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             FÍSICA
+        ====================== -->
+
+        <section id="fisica">
+
+            <h2>Física</h2>
+
+            <p>
+                Nesta seção, o grupo deverá apresentar os conteúdos
+                estudados em Física que possuem relação com o tema
+                e o problema do projeto.
+            </p>
+
+
+            <div class="caixa">
+
+                <h3>Conteúdo estudado</h3>
+
+                <p>
+                    Informe qual conteúdo de Física foi estudado.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Relação com o projeto</h3>
+
+                <p>
+                    Explique como esse conteúdo ajuda a compreender
+                    o problema escolhido pelo grupo.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Imagem ou gráfico</h3>
+
+                <!--
+                Exemplo:
+
+                <img src="img/fisica.jpg"
+                     alt="Descrição da imagem">
+                -->
+
+                <p>
+                    Insira aqui imagens, gráficos, tabelas,
+                    cálculos ou outros materiais relacionados.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             GEOGRAFIA
+        ====================== -->
+
+        <section id="geografia">
+
+            <h2>Geografia</h2>
+
+            <p>
+                Nesta seção, o grupo deverá apresentar os conteúdos
+                estudados em Geografia relacionados ao tema.
+            </p>
+
+
+            <div class="caixa">
+
+                <h3>Conteúdo estudado</h3>
+
+                <p>
+                    Informe qual conteúdo de Geografia foi estudado.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Relação com o projeto</h3>
+
+                <p>
+                    Explique como esse conteúdo ajuda a compreender
+                    o problema.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Dados, mapas ou imagens</h3>
+
+                <p>
+                    Adicione aqui mapas, gráficos, imagens,
+                    tabelas ou outros materiais relevantes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             FILOSOFIA
+        ====================== -->
+
+        <section id="filosofia">
+
+            <h2>Filosofia</h2>
+
+            <p>
+                Nesta seção, o grupo deverá apresentar uma análise
+                crítica do tema a partir dos conteúdos estudados.
+            </p>
+
+
+            <div class="caixa">
+
+                <h3>Conteúdo estudado</h3>
+
+                <p>
+                    Informe o conceito ou conteúdo filosófico
+                    estudado.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Reflexão sobre o problema</h3>
+
+                <p>
+                    Explique como os conceitos estudados ajudam
+                    o grupo a refletir criticamente sobre o tema.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Questões levantadas</h3>
+
+                <ul>
+                    <li>Questão ou reflexão 1</li>
+                    <li>Questão ou reflexão 2</li>
+                    <li>Questão ou reflexão 3</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             SOLUÇÃO
+        ====================== -->
+
+        <section id="solucao">
+
+            <h2>Possível Solução</h2>
+
+            <div class="caixa">
+
+                <h3>Nossa proposta</h3>
+
+                <p>
+                    Descreva a solução proposta pelo grupo.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Como a solução funciona?</h3>
+
+                <p>
+                    Explique como a solução poderia funcionar.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <h3>Como os conhecimentos foram integrados?</h3>
+
+                <p>
+                    Explique como os conhecimentos de Física,
+                    Geografia, Filosofia e Programação Web
+                    contribuíram para o desenvolvimento do projeto.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================
+             REFERÊNCIAS
+        ====================== -->
+
+        <section id="referencias">
+
+            <h2>Referências</h2>
+
+            <p>
+                Liste aqui os livros, sites, artigos e outras
+                fontes utilizadas durante o projeto.
+            </p>
+
+            <ul>
+                <li>Autor. Título. Ano.</li>
+                <li>Autor. Título. Ano.</li>
+            </ul>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Projeto Integrador - Técnico em Informática
+        </p>
+
+        <p>
+            Ano: 2026
+        </p>
+
+    </footer>
+
+    <script>
+
+        // Seleciona todos os links do menu
+        const linksMenu = document.querySelectorAll("nav a");
+
+        // Percorre todos os links encontrados
+        linksMenu.forEach(function (link) {
+
+            // Detecta o clique no link
+            link.addEventListener("click", function (event) {
+
+                // Impede o comportamento padrão do link
+                event.preventDefault();
+
+                // Obtém o destino indicado no href
+                const destino = link.getAttribute("href");
+
+                // Localiza a seção correspondente
+                const secao = document.querySelector(destino);
+
+                // Faz a rolagem suave até a seção
+                secao.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+    </script>
+
 </body>
+
 </html>
