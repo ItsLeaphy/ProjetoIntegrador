@@ -151,7 +151,7 @@ nav a:focus-visible {
 }
 
 main {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 26px 12px 40px
 }
@@ -180,7 +180,6 @@ section+section::before {
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 2.1fr;
     gap: 14px;
     align-items: start
 }
@@ -236,13 +235,6 @@ section+section::before {
     align-self: start;
     border-left: 5px solid var(--ouro);
     background: linear-gradient(135deg, var(--areia) 30%, var(--tan))
-}
-
-@media(min-width:721px) {
-    .lado {
-        position: sticky;
-        top: 14px
-    }
 }
 
 .lado h2 {
