@@ -1,247 +1,520 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pequenos Negócios e Grandes Plataformas — Projeto Integrador</title>
-<style>
-/* PROJETO INTEGRADOR - 2º Ano Técnico em Informática */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f4f8; color: #1e2a3a; line-height: 1.6; padding: 20px; }
-header { background: linear-gradient(135deg, #1a3a5c, #2a5a7c); color: #fff; text-align: center; padding: 40px 20px; border-radius: 12px 12px 0 0; }
-header h1 { font-size: 2.3rem; margin-bottom: 10px; letter-spacing: -0.5px; }
-header p { font-size: 1.1rem; opacity: .9; font-weight: 300; }
-nav { background: #fff; padding: 12px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #e67e22; }
-nav a { color: #1a3a5c; text-decoration: none; font-weight: 600; font-size: .95rem; padding: 8px 18px; border-radius: 25px; transition: all .3s; }
-nav a:hover { background: #1a3a5c; color: #fff; transform: translateY(-2px); }
-main { max-width: 1100px; margin: 0 auto; background: #fff; padding: 30px 40px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
-section { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 2px solid #eaeef3; scroll-margin-top: 80px; }
-section:last-child { border-bottom: none; margin-bottom: 0; }
-section h2 { font-size: 2rem; color: #1a3a5c; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 4px solid #e67e22; display: inline-block; }
-section > p { color: #4a5a6a; font-size: 1.05rem; margin-bottom: 25px; max-width: 800px; }
-.caixa { background: #f8fafc; border-left: 5px solid #e67e22; padding: 20px 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.04); transition: all .3s; }
-.caixa:hover { transform: translateX(6px); background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
-.caixa h3 { color: #1a3a5c; font-size: 1.2rem; margin-bottom: 8px; }
-.caixa p { line-height: 1.7; margin-bottom: 8px; }
-.caixa p:last-child { margin-bottom: 0; }
-.caixa ul { list-style: none; }
-.caixa ul li { padding: 6px 0 6px 26px; border-bottom: 1px solid #eaeef3; position: relative; }
-.caixa ul li::before { content: "✓"; position: absolute; left: 4px; color: #e67e22; font-weight: 700; }
-.caixa ul li:last-child { border-bottom: none; }
-#fisica .caixa { border-left-color: #2980b9; }
-#geografia .caixa { border-left-color: #27ae60; }
-#filosofia .caixa { border-left-color: #8e44ad; }
-#solucao .caixa { background: #fef9f0; }
-.aviso-demo { background: #fff3e0; border: 2px dashed #e67e22; padding: 12px 20px; border-radius: 8px; margin: 15px 0; color: #7a4a1a; font-size: .95rem; }
-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; }
-table th { background: #1a3a5c; color: #fff; padding: 10px 14px; text-align: left; }
-table td { padding: 10px 14px; border-bottom: 1px solid #eaeef3; }
-.fonte { font-size: .85rem; color: #6a7a8a; }
-#referencias ul { list-style: none; }
-#referencias ul li { padding: 10px 15px; background: #f8fafc; margin-bottom: 8px; border-radius: 6px; border-left: 4px solid #1a3a5c; word-break: break-word; }
-footer { max-width: 1100px; margin: 20px auto 0; background: #1a3a5c; color: rgba(255,255,255,.85); text-align: center; padding: 25px 20px; border-radius: 12px; }
-@media (max-width: 768px) {
-  body { padding: 10px; }
-  header h1 { font-size: 1.6rem; }
-  main { padding: 20px 16px; }
-  section h2 { font-size: 1.5rem; }
-  nav a { font-size: .85rem; padding: 6px 12px; }
-  .caixa { padding: 14px 16px; }
-  table { font-size: .8rem; }
-  table th, table td { padding: 7px 8px; }
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pequenos Negócios e Grandes Plataformas — Projeto Integrador</title>
+    <style>
+        /* PROJETO INTEGRADOR - 2º Ano Técnico em Informática */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a3a5c, #2a5a7c);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: .9;
+            font-weight: 300;
+        }
+
+        nav {
+            background: #fff;
+            padding: 12px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #e67e22;
+        }
+
+        nav a {
+            color: #1a3a5c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .95rem;
+            padding: 8px 18px;
+            border-radius: 25px;
+            transition: all .3s;
+        }
+
+        nav a:hover {
+            background: #1a3a5c;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eaeef3;
+            scroll-margin-top: 80px;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #1a3a5c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 4px solid #e67e22;
+            display: inline-block;
+        }
+
+        section>p {
+            color: #4a5a6a;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+
+        .caixa {
+            background: #f8fafc;
+            border-left: 5px solid #e67e22;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+            transition: all .3s;
+        }
+
+        .caixa:hover {
+            transform: translateX(6px);
+            background: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+        }
+
+        .caixa h3 {
+            color: #1a3a5c;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .caixa p {
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .caixa p:last-child {
+            margin-bottom: 0;
+        }
+
+        .caixa ul {
+            list-style: none;
+        }
+
+        .caixa ul li {
+            padding: 6px 0 6px 26px;
+            border-bottom: 1px solid #eaeef3;
+            position: relative;
+        }
+
+        .caixa ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 4px;
+            color: #e67e22;
+            font-weight: 700;
+        }
+
+        .caixa ul li:last-child {
+            border-bottom: none;
+        }
+
+        #fisica .caixa {
+            border-left-color: #2980b9;
+        }
+
+        #geografia .caixa {
+            border-left-color: #27ae60;
+        }
+
+        #filosofia .caixa {
+            border-left-color: #8e44ad;
+        }
+
+        #solucao .caixa {
+            background: #fef9f0;
+        }
+
+        .aviso-demo {
+            background: #fff3e0;
+            border: 2px dashed #e67e22;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            color: #7a4a1a;
+            font-size: .95rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: .95rem;
+        }
+
+        table th {
+            background: #1a3a5c;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eaeef3;
+        }
+
+        .fonte {
+            font-size: .85rem;
+            color: #6a7a8a;
+        }
+
+        #referencias ul {
+            list-style: none;
+        }
+
+        #referencias ul li {
+            padding: 10px 15px;
+            background: #f8fafc;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border-left: 4px solid #1a3a5c;
+            word-break: break-word;
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 20px auto 0;
+            background: #1a3a5c;
+            color: rgba(255, 255, 255, .85);
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            main {
+                padding: 20px 16px;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                font-size: .85rem;
+                padding: 6px 12px;
+            }
+
+            .caixa {
+                padding: 14px 16px;
+            }
+
+            table {
+                font-size: .8rem;
+            }
+
+            table th,
+            table td {
+                padding: 7px 8px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Pequenos Negócios e Grandes Plataformas</h1>
-  <p>Projeto Integrador B — 2º Ano Técnico em Informática — 2026.2</p>
-</header>
+    <header>
+        <h1>Pequenos Negócios e Grandes Plataformas</h1>
+        <p>Projeto Integrador B — 2º Ano Técnico em Informática — 2026.2</p>
+    </header>
 
-<nav>
-  <a href="#inicio">Início</a>
-  <a href="#fisica">Física</a>
-  <a href="#geografia">Geografia</a>
-  <a href="#filosofia">Filosofia</a>
-  <a href="#solucao">Possível Solução</a>
-  <a href="#referencias">Referências</a>
-</nav>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#fisica">Física</a>
+        <a href="#geografia">Geografia</a>
+        <a href="#filosofia">Filosofia</a>
+        <a href="#solucao">Possível Solução</a>
+        <a href="#referencias">Referências</a>
+    </nav>
 
-<main>
+    <main>
 
-<!-- INÍCIO -->
-<section id="inicio">
-  <h2>Sobre o Projeto</h2>
+        <!-- INÍCIO -->
+        <section id="inicio">
+            <h2>Sobre o Projeto</h2>
 
-  <div class="caixa">
-    <h3>Tema</h3>
-    <p>A concentração do comércio digital em poucas plataformas de intermediação e a posição do pequeno negócio diante delas, com recorte em Teresina (PI).</p>
-  </div>
+            <div class="caixa">
+                <h3>Tema</h3>
+                <p>A concentração do comércio digital em poucas plataformas de intermediação e a posição do pequeno
+                    negócio diante delas, com recorte em Teresina (PI).</p>
+            </div>
 
-  <div class="caixa">
-    <h3>O Problema</h3>
-    <p>Para muitos pequenos negócios, vender pela internet passou a significar depender de grandes plataformas. Investigamos esse problema em três camadas:</p>
-    <ul>
-      <li><strong>Custo:</strong> comissões e taxas reduzem a margem de lucro de quem vende.</li>
-      <li><strong>Dependência:</strong> o pequeno negócio precisa da plataforma para ser encontrado e nem sempre tem alternativa equivalente.</li>
-      <li><strong>Perda de controle:</strong> a plataforma fica com a relação com o cliente e define sozinha as regras (taxas, ranking, contratos).</li>
-    </ul>
-    <p>O caso do delivery de comida é o exemplo mais visível e o primeiro que analisamos. A pesquisa também busca outros tipos de plataforma para verificar se o problema é geral.</p>
-  </div>
+            <div class="caixa">
+                <h3>O Problema</h3>
+                <p>Para muitos pequenos negócios, vender pela internet passou a significar depender de grandes
+                    plataformas. Investigamos esse problema em três camadas:</p>
+                <ul>
+                    <li><strong>Custo:</strong> comissões e taxas reduzem a margem de lucro de quem vende.</li>
+                    <li><strong>Dependência:</strong> o pequeno negócio precisa da plataforma para ser encontrado e nem
+                        sempre tem alternativa equivalente.</li>
+                    <li><strong>Perda de controle:</strong> a plataforma fica com a relação com o cliente e define
+                        sozinha as regras (taxas, ranking, contratos).</li>
+                </ul>
+                <p>O caso do delivery de comida é o exemplo mais visível e o primeiro que analisamos. A pesquisa também
+                    busca outros tipos de plataforma para verificar se o problema é geral.</p>
+            </div>
 
-  <div class="caixa">
-    <h3>Justificativa</h3>
-    <p>Por trás de cada pequeno negócio há renda de família, empregos locais e a economia do bairro. Quando o pequeno comércio perde margem e autonomia para intermediários, o efeito vai além do dono da loja. Em Teresina, onde o comércio de bairro é parte do cotidiano, entender essa dependência ajuda a discutir alternativas.</p>
-    <p>Reunimos alguns dados públicos que mostram a dimensão do problema:</p>
-    <table>
-      <tr><th>Dado</th><th>Situação</th></tr>
-      <tr><td>Taxas do iFood — Plano Básico</td><td>12% de comissão + 3,2% de pagamento online (≈ 15,2%); entrega por conta do restaurante</td></tr>
-      <tr><td>Taxas do iFood — Plano Entrega</td><td>23% de comissão + taxa de pagamento (≈ 26,2% a 26,5%)</td></tr>
-      <tr><td>Mensalidade</td><td>R$ 110 (Básico) ou R$ 150 (Entrega), para quem fatura mais de R$ 1.800 por mês</td></tr>
-      <tr><td>Saída do Uber Eats</td><td>Encerrou o delivery de restaurantes no Brasil em 7/3/2022; em manifestação ao Cade, a Uber citou barreiras impostas pelo iFood entre os motivos</td></tr>
-    </table>
-    <p class="fonte">Fontes na seção Referências. Valores de taxas podem mudar; conferir antes de apresentar.</p>
-    <div class="aviso-demo">Em construção: incluir um segundo caso (marketplace de produtos ou dependência de redes sociais) e dados de Teresina (questionário com comerciantes, dados do IBGE/Sebrae).</div>
-  </div>
+            <div class="caixa">
+                <h3>Justificativa</h3>
+                <p>Por trás de cada pequeno negócio há renda de família, empregos locais e a economia do bairro. Quando
+                    o pequeno comércio perde margem e autonomia para intermediários, o efeito vai além do dono da loja.
+                    Em Teresina, onde o comércio de bairro é parte do cotidiano, entender essa dependência ajuda a
+                    discutir alternativas.</p>
+                <p>Reunimos alguns dados públicos que mostram a dimensão do problema:</p>
+                <table>
+                    <tr>
+                        <th>Dado</th>
+                        <th>Situação</th>
+                    </tr>
+                    <tr>
+                        <td>Taxas do iFood — Plano Básico</td>
+                        <td>12% de comissão + 3,2% de pagamento online (≈ 15,2%); entrega por conta do restaurante</td>
+                    </tr>
+                    <tr>
+                        <td>Taxas do iFood — Plano Entrega</td>
+                        <td>23% de comissão + taxa de pagamento (≈ 26,2% a 26,5%)</td>
+                    </tr>
+                    <tr>
+                        <td>Mensalidade</td>
+                        <td>R$ 110 (Básico) ou R$ 150 (Entrega), para quem fatura mais de R$ 1.800 por mês</td>
+                    </tr>
+                    <tr>
+                        <td>Saída do Uber Eats</td>
+                        <td>Encerrou o delivery de restaurantes no Brasil em 7/3/2022; em manifestação ao Cade, a Uber
+                            citou barreiras impostas pelo iFood entre os motivos</td>
+                    </tr>
+                </table>
+                <p class="fonte">Fontes na seção Referências. Valores de taxas podem mudar; conferir antes de
+                    apresentar.</p>
+                <div class="aviso-demo">Em construção: incluir um segundo caso (marketplace de produtos ou dependência
+                    de redes sociais) e dados de Teresina (questionário com comerciantes, dados do IBGE/Sebrae).</div>
+            </div>
 
-  <div class="caixa">
-    <h3>Objetivos</h3>
-    <ul>
-      <li>Compreender como grandes plataformas de intermediação afetam pequenos negócios (custo, dependência e controle).</li>
-      <li>Analisar o caso do delivery e verificar se o mesmo padrão aparece em outros tipos de plataforma.</li>
-      <li>Investigar a realidade de pequenos comerciantes de Teresina.</li>
-      <li>Relacionar o problema aos conhecimentos de Física, Geografia e Filosofia.</li>
-      <li>Apresentar uma possível solução e discutir seus limites.</li>
-    </ul>
-  </div>
+            <div class="caixa">
+                <h3>Objetivos</h3>
+                <ul>
+                    <li>Compreender como grandes plataformas de intermediação afetam pequenos negócios (custo,
+                        dependência e controle).</li>
+                    <li>Analisar o caso do delivery e verificar se o mesmo padrão aparece em outros tipos de plataforma.
+                    </li>
+                    <li>Investigar a realidade de pequenos comerciantes de Teresina.</li>
+                    <li>Relacionar o problema aos conhecimentos de Física, Geografia e Filosofia.</li>
+                    <li>Apresentar uma possível solução e discutir seus limites.</li>
+                </ul>
+            </div>
 
-  <div class="caixa">
-    <h3>Integrantes</h3>
-    <ul>
-      <li>Daniel Christian</li>
-      <li>Diego Miguel</li>
-      <li>José Casuza</li>
-      <li>Victor Cesar</li>
-      <li>João Pedro</li>
-    </ul>
-  </div>
-</section>
+            <div class="caixa">
+                <h3>Integrantes</h3>
+                <ul>
+                    <li>Daniel Christian</li>
+                    <li>Diego Miguel</li>
+                    <li>José Casuza</li>
+                    <li>Victor Cesar</li>
+                    <li>João Pedro</li>
+                </ul>
+            </div>
+        </section>
 
-<!-- FÍSICA -->
-<section id="fisica">
-  <h2>Física</h2>
-  <p>Aqui entram apenas relações que existirem de fato com os conteúdos estudados em aula.</p>
+        <!-- FÍSICA -->
+        <section id="fisica">
+            <h2>Física</h2>
+            <p>Aqui entram apenas relações que existirem de fato com os conteúdos estudados em aula.</p>
 
-  <div class="caixa">
-    <h3>Conteúdo estudado</h3>
-    <p>(Registrar o conteúdo visto em aula.)</p>
-  </div>
+            <div class="caixa">
+                <h3>Conteúdo estudado</h3>
+                <p>(Registrar o conteúdo visto em aula.)</p>
+            </div>
 
-  <div class="caixa">
-    <h3>Relação com o projeto</h3>
-    <div class="aviso-demo">Em construção. Hipótese a testar: energia e custo do deslocamento em entregas (consumo de combustível e tempo por entrega) e o peso disso para quem entrega sozinho. Só será incluída se o conteúdo permitir cálculos reais.</div>
-  </div>
-</section>
+            <div class="caixa">
+                <h3>Relação com o projeto</h3>
+                <div class="aviso-demo">Em construção. Hipótese a testar: energia e custo do deslocamento em entregas
+                    (consumo de combustível e tempo por entrega) e o peso disso para quem entrega sozinho. Só será
+                    incluída se o conteúdo permitir cálculos reais.</div>
+            </div>
+        </section>
 
-<!-- GEOGRAFIA -->
-<section id="geografia">
-  <h2>Geografia</h2>
-  <p>O problema tem dimensão territorial: quem vende, quem compra e quem controla o acesso ao mercado.</p>
+        <!-- GEOGRAFIA -->
+        <section id="geografia">
+            <h2>Geografia</h2>
+            <p>O problema tem dimensão territorial: quem vende, quem compra e quem controla o acesso ao mercado.</p>
 
-  <div class="caixa">
-    <h3>Conteúdo estudado</h3>
-    <p>(Registrar o conteúdo visto em aula.)</p>
-  </div>
+            <div class="caixa">
+                <h3>Conteúdo estudado</h3>
+                <p>(Registrar o conteúdo visto em aula.)</p>
+            </div>
 
-  <div class="caixa">
-    <h3>Relação com o projeto</h3>
-    <p>O comércio de bairro sempre dependeu de proximidade e reconhecimento local. Ao migrar a venda para plataformas globais ou nacionais, o pequeno negócio passa a competir em um espaço digital controlado por terceiros, e a identidade local se dilui em um catálogo genérico.</p>
-    <div class="aviso-demo">Em construção: dados de Teresina (número de pequenos negócios, distribuição por bairro) e um mapa ou tabela para ilustrar.</div>
-  </div>
-</section>
+            <div class="caixa">
+                <h3>Relação com o projeto</h3>
+                <p>O comércio de bairro sempre dependeu de proximidade e reconhecimento local. Ao migrar a venda para
+                    plataformas globais ou nacionais, o pequeno negócio passa a competir em um espaço digital controlado
+                    por terceiros, e a identidade local se dilui em um catálogo genérico.</p>
+                <div class="aviso-demo">Em construção: dados de Teresina (número de pequenos negócios, distribuição por
+                    bairro) e um mapa ou tabela para ilustrar.</div>
+            </div>
+        </section>
 
-<!-- FILOSOFIA -->
-<section id="filosofia">
-  <h2>Filosofia</h2>
-  <p>Análise crítica: quem tem poder sobre o mercado digital e quem tem direito à relação com o cliente.</p>
+        <!-- FILOSOFIA -->
+        <section id="filosofia">
+            <h2>Filosofia</h2>
+            <p>Análise crítica: quem tem poder sobre o mercado digital e quem tem direito à relação com o cliente.</p>
 
-  <div class="caixa">
-    <h3>Conteúdo estudado</h3>
-    <p>(Registrar o conceito filosófico visto em aula.)</p>
-  </div>
+            <div class="caixa">
+                <h3>Conteúdo estudado</h3>
+                <p>(Registrar o conceito filosófico visto em aula.)</p>
+            </div>
 
-  <div class="caixa">
-    <h3>Reflexão sobre o problema</h3>
-    <p>A plataforma se apresenta como ponte entre quem vende e quem compra, mas ao mesmo tempo controla o acesso, define as taxas e retém a relação com o cliente. A intermediação deixa de ser um serviço e passa a ser a própria fonte de poder. Isso levanta questões sobre liberdade econômica, justiça na distribuição de valor e responsabilidade de quem controla a infraestrutura de um mercado.</p>
-  </div>
+            <div class="caixa">
+                <h3>Reflexão sobre o problema</h3>
+                <p>A plataforma se apresenta como ponte entre quem vende e quem compra, mas ao mesmo tempo controla o
+                    acesso, define as taxas e retém a relação com o cliente. A intermediação deixa de ser um serviço e
+                    passa a ser a própria fonte de poder. Isso levanta questões sobre liberdade econômica, justiça na
+                    distribuição de valor e responsabilidade de quem controla a infraestrutura de um mercado.</p>
+            </div>
 
-  <div class="caixa">
-    <h3>Questões levantadas</h3>
-    <ul>
-      <li>De quem é a relação com o cliente: de quem vende ou de quem intermedeia?</li>
-      <li>É livre a escolha de quem só tem uma plataforma viável para vender?</li>
-      <li>Uma solução tecnológica devolve autonomia ou cria apenas outro intermediário?</li>
-    </ul>
-  </div>
-</section>
+            <div class="caixa">
+                <h3>Questões levantadas</h3>
+                <ul>
+                    <li>De quem é a relação com o cliente: de quem vende ou de quem intermedeia?</li>
+                    <li>É livre a escolha de quem só tem uma plataforma viável para vender?</li>
+                    <li>Uma solução tecnológica devolve autonomia ou cria apenas outro intermediário?</li>
+                </ul>
+            </div>
+        </section>
 
-<!-- SOLUÇÃO -->
-<section id="solucao">
-  <h2>Possível Solução</h2>
+        <!-- SOLUÇÃO -->
+        <section id="solucao">
+            <h2>Possível Solução</h2>
 
-  <div class="caixa">
-    <h3>Nossa proposta: Origens</h3>
-    <p>O Origens é uma ferramenta de relacionamento, identidade e gestão para o pequeno comércio em geral (não só comida), com foco hiperlocal e começando em Teresina. Cada loja tem um perfil próprio com história, fotos, horário e catálogo, acessado por um link único que a própria loja divulga (QR code, Instagram, boca a boca). O cliente monta o pedido sem criar conta, e a loja gerencia pedidos e estoque em um painel simples.</p>
-  </div>
+            <div class="caixa">
+                <h3>Nossa proposta: Origens</h3>
+                <p>O Origens é uma ferramenta de relacionamento, identidade e gestão para o pequeno comércio em geral
+                    (não só comida), com foco hiperlocal e começando em Teresina. Cada loja tem um perfil próprio com
+                    história, fotos, horário e catálogo, acessado por um link único que a própria loja divulga (QR code,
+                    Instagram, boca a boca). O cliente monta o pedido sem criar conta, e a loja gerencia pedidos e
+                    estoque em um painel simples.</p>
+            </div>
 
-  <div class="caixa">
-    <h3>Como responde às camadas do problema</h3>
-    <ul>
-      <li><strong>Custo:</strong> o modelo é de assinatura mensal acessível, sem comissão sobre cada pedido.</li>
-      <li><strong>Perda de controle:</strong> a loja mantém o vínculo direto e o histórico dos seus clientes.</li>
-      <li><strong>Dependência:</strong> reduz a dependência para clientes que a loja já conquistou, mas não resolve sozinha como o pequeno negócio é encontrado.</li>
-    </ul>
-  </div>
+            <div class="caixa">
+                <h3>Como responde às camadas do problema</h3>
+                <ul>
+                    <li><strong>Custo:</strong> o modelo é de assinatura mensal acessível, sem comissão sobre cada
+                        pedido.</li>
+                    <li><strong>Perda de controle:</strong> a loja mantém o vínculo direto e o histórico dos seus
+                        clientes.</li>
+                    <li><strong>Dependência:</strong> reduz a dependência para clientes que a loja já conquistou, mas
+                        não resolve sozinha como o pequeno negócio é encontrado.</li>
+                </ul>
+            </div>
 
-  <div class="caixa">
-    <h3>Limites da proposta</h3>
-    <p>O Origens não é um marketplace nem uma rede social: não há busca ou listagem aberta de lojas, e o pagamento acontece fora do aplicativo. Isso é uma escolha consciente, mas significa que a solução depende de a loja atrair clientes por seus próprios canais. Ela também não compete em alcance com as grandes plataformas.</p>
-  </div>
+            <div class="caixa">
+                <h3>Limites da proposta</h3>
+                <p>O Origens não é um marketplace nem uma rede social: não há busca ou listagem aberta de lojas, e o
+                    pagamento acontece fora do aplicativo. Isso é uma escolha consciente, mas significa que a solução
+                    depende de a loja atrair clientes por seus próprios canais. Ela também não compete em alcance com as
+                    grandes plataformas.</p>
+            </div>
 
-  <div class="caixa">
-    <h3>Como os conhecimentos foram integrados?</h3>
-    <div class="aviso-demo">A preencher ao final, com o que Física, Geografia e Filosofia efetivamente trouxeram para compreender o problema e para avaliar a solução.</div>
-  </div>
-</section>
+            <div class="caixa">
+                <h3>Como os conhecimentos foram integrados?</h3>
+                <div class="aviso-demo">A preencher ao final, com o que Física, Geografia e Filosofia efetivamente
+                    trouxeram para compreender o problema e para avaliar a solução.</div>
+            </div>
+        </section>
 
-<!-- REFERÊNCIAS -->
-<section id="referencias">
-  <h2>Referências</h2>
-  <p>Fontes consultadas até agora (acessadas em setembro de 2026). Confirmar nas fontes oficiais antes da entrega final.</p>
-  <ul>
-    <li>iFood Parceiros. Taxas do iFood: entenda planos, comissão e taxa de serviço para restaurantes. https://blog-parceiros.ifood.com.br/taxas-ifood/</li>
-    <li>Tecnoblog. Uber Eats encerra entrega de restaurantes no Brasil e culpa iFood. https://tecnoblog.net/noticias/uber-eats-encerra-entrega-de-restaurantes-no-brasil-e-culpa-ifood/</li>
-    <li>Agência DC News. Uber Eats anuncia fim das operações no Brasil (06/01/2022). https://www.agenciadcnews.com.br/publicacao/s/uber-eats-anuncia-fim-das-operacoes-no-brasil</li>
-  </ul>
-</section>
+        <!-- REFERÊNCIAS -->
+        <section id="referencias">
+            <h2>Referências</h2>
+            <p>Fontes consultadas até agora (acessadas em setembro de 2026). Confirmar nas fontes oficiais antes da
+                entrega final.</p>
+            <ul>
+                <li>iFood Parceiros. Taxas do iFood: entenda planos, comissão e taxa de serviço para restaurantes.
+                    https://blog-parceiros.ifood.com.br/taxas-ifood/</li>
+                <li>Tecnoblog. Uber Eats encerra entrega de restaurantes no Brasil e culpa iFood.
+                    https://tecnoblog.net/noticias/uber-eats-encerra-entrega-de-restaurantes-no-brasil-e-culpa-ifood/
+                </li>
+                <li>Agência DC News. Uber Eats anuncia fim das operações no Brasil (06/01/2022).
+                    https://www.agenciadcnews.com.br/publicacao/s/uber-eats-anuncia-fim-das-operacoes-no-brasil</li>
+            </ul>
+        </section>
 
-</main>
+    </main>
 
-<footer>
-  <p>Projeto Integrador — Técnico em Informática — IFPI Campus Teresina Zona Sul</p>
-  <p>Ano: 2026</p>
-</footer>
+    <footer>
+        <p>Projeto Integrador — Técnico em Informática — IFPI Campus Teresina Zona Sul</p>
+        <p>Ano: 2026</p>
+    </footer>
 
-<script>
-document.querySelectorAll("nav a").forEach(function (link) {
-  link.addEventListener("click", function (event) {
-    event.preventDefault();
-    var secao = document.querySelector(link.getAttribute("href"));
-    if (secao) secao.scrollIntoView({ behavior: "smooth" });
-  });
-});
-</script>
+    <script>
+        document.querySelectorAll("nav a").forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                var secao = document.querySelector(link.getAttribute("href"));
+                if (secao) secao.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    </script>
 
 </body>
+
 </html>
