@@ -202,7 +202,16 @@ section+section::before {
     border-radius: 12px;
     padding: 18px 20px;
     box-shadow: 0 3px 8px rgba(60, 40, 15, .2);
-    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease
+
+    transform: scale(.9);
+    opacity: 0;
+
+    transition: transform .5s ease, box-shadow .25s ease, border-color .25s ease, opacity 0.5s ease;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .card>* {
@@ -254,10 +263,10 @@ section+section::before {
     height: 3px;
     background: var(--ouro);
     border-radius: 2px;
-    transition: width .3s ease
+    transition: width 2s ease
 }
 
-.lado:hover h2::after {
+.lado.visible h2::after {
     width: 100%
 }
 
@@ -325,11 +334,12 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-size: .85rem;
-    min-width: 480px
+    min-width: 480px;
+    background-color: #cfa4708e;
 }
 
 th {
-    background: var(--petroleo);
+    background: var(--borda);
     color: var(--papel);
     text-align: left;
     padding: 8px 12px

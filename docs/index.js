@@ -1,3 +1,4 @@
+// Query
 (function () {
     var eq = document.querySelector('.eq'), n = Math.min(64, Math.floor(window.innerWidth / 11));
     for (var i = 0; i < n; i++) {
@@ -10,6 +11,7 @@
     }
 })();
 
+// Pointer
 document.addEventListener('pointermove', function (e) {
     var c = e.target.closest && e.target.closest('.card');
     if (!c) return;
@@ -17,3 +19,17 @@ document.addEventListener('pointermove', function (e) {
     c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
     c.style.setProperty('--my', (e.clientY - r.top) + 'px');
 });
+
+// Fade
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle("visible", entry.isIntersecting);
+    });
+}, {
+    threshold: 0.1
+});
+
+cards.forEach(card => observer.observe(card));
+observer.unobserve(entry.target);
