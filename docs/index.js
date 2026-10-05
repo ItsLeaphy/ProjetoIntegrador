@@ -23,16 +23,24 @@ document.addEventListener('pointermove', function (e) {
 // Fade
 const cards = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        entry.target.classList.toggle(
-            "visible",
-            entry.isIntersecting
-        );
-    });
-}, {
-    threshold: 0,
-    rootMargin: "-5% 0px -5% 0px"
-});
+const isMobile = window.matchMedia("(max-width: 720px)").matches;
 
-cards.forEach(card => observer.observe(card));
+if (!isMobile) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle(
+                "visible",
+                entry.isIntersecting
+            );
+        });
+    }, {
+        threshold: 0,
+        rootMargin: "-5% 0px -5% 0px"
+    });
+
+    cards.forEach(card => observer.observe(card));
+} else {
+    cards.forEach(card => {
+        card.classList.add("visible");
+    });
+}
