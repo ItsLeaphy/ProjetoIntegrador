@@ -25,11 +25,14 @@ const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        entry.target.classList.toggle("visible", entry.isIntersecting);
+        entry.target.classList.toggle(
+            "visible",
+            entry.isIntersecting
+        );
     });
 }, {
-    threshold: 0.1
+    threshold: 0,
+    rootMargin: "-5% 0px -5% 0px"
 });
 
 cards.forEach(card => observer.observe(card));
-observer.unobserve(entry.target);
