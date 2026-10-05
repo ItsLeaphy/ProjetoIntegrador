@@ -1,0 +1,410 @@
+:root {
+    --papel: #f6ead6;
+    --areia: #ecd6b3;
+    --tan: #e2c6a0;
+    --tan-esc: #cfae82;
+    --borda: #a9865a;
+    --espresso: #241a12;
+    --cacau: #43321f;
+    --ouro: #a8680f;
+    --ouro-claro: #e8b04a;
+    --petroleo: #2f4f4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px
+}
+
+body {
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+    color: var(--espresso);
+    line-height: 1.7;
+    font-size: .95rem;
+    min-height: 100vh;
+    background:
+        radial-gradient(55% 35% at 25% 60%, rgba(120, 125, 105, .28), transparent 70%),
+        radial-gradient(45% 30% at 92% 12%, rgba(200, 150, 80, .30), transparent 70%),
+        linear-gradient(180deg, #ece2d0 0%, #f0e4cc 50%, #f3e3bf 100%);
+    background-attachment: fixed;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 40px 20px 18px;
+    background: linear-gradient(120deg, var(--papel) 35%, var(--tan-esc));
+    border-bottom: 3px solid var(--ouro);
+    box-shadow: 0 6px 14px rgba(60, 40, 15, .2)
+}
+
+header>* {
+    position: relative;
+    z-index: 1
+}
+
+header small {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: .05em;
+    color: var(--cacau)
+}
+
+header h1 {
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: .06em;
+    line-height: 1.2
+}
+
+header p {
+    font-size: .85rem;
+    color: var(--cacau);
+    margin-top: 6px
+}
+
+header>.eq {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    top: 34px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 28%, rgba(0, 0, 0, .12) 50%, #000 72%, #000 100%);
+    mask-image: linear-gradient(90deg, #000 0, #000 28%, rgba(0, 0, 0, .12) 50%, #000 72%, #000 100%)
+}
+
+.eq i {
+    flex: 1;
+    max-width: 9px;
+    margin: 0 1px;
+    height: 100%;
+    display: flex;
+    flex-direction: column
+}
+
+.eq i::before,
+.eq i::after {
+    content: "";
+    flex: 1;
+    animation: eq var(--d, 1.2s) ease-in-out var(--l, 0s) infinite alternate;
+    transform: scaleY(var(--min, .2))
+}
+
+.eq i::before {
+    transform-origin: bottom;
+    background: linear-gradient(180deg, var(--ouro-claro), #b8791f);
+    border-radius: 2px 2px 0 0
+}
+
+.eq i::after {
+    transform-origin: top;
+    background: linear-gradient(180deg, #a8721e, #d9b56a);
+    opacity: .55;
+    border-radius: 0 0 2px 2px
+}
+
+@keyframes eq {
+    to {
+        transform: scaleY(var(--max, 1))
+    }
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 22px;
+    margin-top: 22px
+}
+
+nav a {
+    color: var(--espresso);
+    text-decoration: none;
+    font-size: .9rem;
+    padding: 2px 0;
+    background: linear-gradient(var(--ouro), var(--ouro)) 0 100%/0 2px no-repeat;
+    transition: background-size .3s ease
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-size: 100% 2px;
+    outline: none
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 26px 12px 40px
+}
+
+section {
+    margin: 0;
+    position: relative
+}
+
+section+section {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(67, 50, 31, .28)
+}
+
+section+section::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    background: var(--ouro);
+    transform: translateX(-50%) rotate(45deg)
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2.1fr;
+    gap: 14px;
+    align-items: start
+}
+
+.card.grande {
+    background: linear-gradient(120deg, var(--tan) 25%, #cdb08a 55%, var(--tan))
+}
+
+.bloco+.bloco {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1.5px dashed rgba(67, 50, 31, .45)
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--tan) 30%, #d8ba92);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 3px 8px rgba(60, 40, 15, .2);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease
+}
+
+.card>* {
+    position: relative;
+    z-index: 1
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+    background: radial-gradient(750px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 239, 208, 0.611), transparent 65%)
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--ouro);
+    box-shadow: 0 12px 24px rgba(60, 40, 15, .28)
+}
+
+.card:hover::before {
+    opacity: 1
+}
+
+.lado {
+    align-self: start;
+    border-left: 5px solid var(--ouro);
+    background: linear-gradient(135deg, var(--areia) 30%, var(--tan))
+}
+
+@media(min-width:721px) {
+    .lado {
+        position: sticky;
+        top: 14px
+    }
+}
+
+.lado h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    position: relative
+}
+
+.lado h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 34px;
+    height: 3px;
+    background: var(--ouro);
+    border-radius: 2px;
+    transition: width .3s ease
+}
+
+.lado:hover h2::after {
+    width: 100%
+}
+
+.lado p {
+    color: var(--cacau)
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--espresso)
+}
+
+.card p {
+    margin-bottom: 8px;
+    max-width: 75ch
+}
+
+.card p:last-child {
+    margin-bottom: 0
+}
+
+.card ul {
+    list-style: none
+}
+
+.card li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    border-bottom: 1px dashed rgba(67, 50, 31, .35)
+}
+
+.card li:last-child {
+    border-bottom: none
+}
+
+.card li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: .95em;
+    width: 7px;
+    height: 7px;
+    background: var(--ouro);
+    border-radius: 50%
+}
+
+.wip {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border: 1.5px dashed var(--cacau);
+    border-radius: 8px;
+    font-size: .85rem;
+    color: var(--cacau);
+    background: rgba(255, 255, 255, .28)
+}
+
+.tabela {
+    overflow-x: auto;
+    margin: 8px 0
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .85rem;
+    min-width: 480px
+}
+
+th {
+    background: var(--petroleo);
+    color: var(--papel);
+    text-align: left;
+    padding: 8px 12px
+}
+
+td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(67, 50, 31, .3);
+    vertical-align: top
+}
+
+tr:hover td {
+    background: rgba(255, 246, 228, .45)
+}
+
+.fonte {
+    font-size: .8rem;
+    color: var(--cacau)
+}
+
+.refs li {
+    word-break: break-word
+}
+
+.refs a {
+    color: var(--petroleo);
+    text-underline-offset: 3px
+}
+
+.refs a:hover {
+    color: var(--ouro)
+}
+
+footer {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    text-align: center;
+    padding: 20px;
+    color: var(--cacau);
+    font-size: .8rem
+}
+
+a:focus-visible {
+    outline: 2px solid var(--petroleo);
+    outline-offset: 3px
+}
+
+@media(max-width:720px) {
+    .grid {
+        grid-template-columns: 1fr
+    }
+
+    body {
+        font-size: .9rem
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .eq i::before,
+    .eq i::after {
+        animation: none
+    }
+
+    .card,
+    .card::before,
+    nav a,
+    .lado h2::after {
+        transition: none
+    }
+
+    .card:hover {
+        transform: none
+    }
+}
