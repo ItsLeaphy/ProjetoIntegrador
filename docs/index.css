@@ -22,8 +22,13 @@ html {
     scroll-padding-top: 20px
 }
 
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("../fonts/JetBrainsMono.ttf") format("truetype");
+}
+
 body {
-    font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
     color: var(--espresso);
     line-height: 1.7;
     font-size: .95rem;
